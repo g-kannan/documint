@@ -25,6 +25,7 @@ theme:
     - search.suggest
     - content.code.copy
     - navigation.expand
+    - content.code.select
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
@@ -52,3 +53,7 @@ nav:
       - Vision: 01_Overview/vision.md
   - Tools & Frameworks: 02_Tools_Frameworks/Python.md
   - Best Practices: 04_Best_Practices/Cloud_Service_Providers.md
+  - Data Flow:
+      - Bronze: 03_DataFlow/02_Bronze/Bronze.md
+      - Silver: 03_DataFlow/03_Silver/Silver.md
+      - Gold: 03_DataFlow/04_Gold/Gold.md

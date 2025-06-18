@@ -9,7 +9,7 @@
 | [duckdb](https://duckdb.org/) | Analytical Processing | a fast in-process database system | `pip install duckdb` |
 | [daft](https://github.com/Eventual-Inc/Daft) | Analytical Processing | Unified Engine for Data Analytics, Engineering & ML/AI | `pip install daft` |
 | [polars](https://docs.pola.rs/) | Analytical Processing | DataFrame-Agnostic Query Language | `pip install polars` |
-| [deltalake](https://github.com/delta-io/delta-rs) | Analytical Processing | Delta Lake | `pip install deltalake` |
+| [deltalake](https://github.com/delta-io/delta-rs) | Open Table Format | Delta Lake | `pip install deltalake` |
 
 ## Tools
 | Name | Purpose | Description |
@@ -17,4 +17,5 @@
 | [eraser.io](https://eraser.io/) | Drawing | AI for technical design and documentation |
 | [Excalidraw](https://excalidraw.com/) | Drawing | Drawing Tool | 
 | [draw.io](https://www.draw.io/) | Drawing | Drawing Tool |
+| [pendulumn](https://github.com/python-pendulum/pendulum) | Date and Time | Python datetimes made easy | `pip install pendulum` |
 
