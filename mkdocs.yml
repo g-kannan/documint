@@ -45,12 +45,10 @@ theme:
       accent: orange
 plugins:
   - tags
-  - privacy:
-      links_attr_map:
-        target: _blank
+  - open-in-new-tab
 copyright: Copyright &copy; 2025 DocuMint
 nav:
   - Overview:
       - Vision: 01_Overview/vision.md
-  - Frameworks:
-      - Logging: 02_Frameworks/Logging.md
+  - Tools & Frameworks: 02_Tools_Frameworks/Python.md
+  - Best Practices: 04_Best_Practices/Cloud_Service_Providers.md
