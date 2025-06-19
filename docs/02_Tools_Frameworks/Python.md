@@ -17,5 +17,6 @@
 | [eraser.io](https://eraser.io/) | Drawing | AI for technical design and documentation |
 | [Excalidraw](https://excalidraw.com/) | Drawing | Drawing Tool | 
 | [draw.io](https://www.draw.io/) | Drawing | Drawing Tool |
-| [pendulumn](https://github.com/python-pendulum/pendulum) | Date and Time | Python datetimes made easy | `pip install pendulum` |
+| [pendulumn](https://github.com/python-pendulum/pendulum) | Date and Time | Python datetimes made easy
+| [Databricks](https://www.databricks.com/learn/free-edition) | Spark | Databricks Free Edition
 

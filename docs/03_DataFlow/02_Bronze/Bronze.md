@@ -7,25 +7,29 @@ The Bronze layer is where we land all the data from external source systems. The
 #### Mandatory metadata fields to add:
 
 1. Load Timestamp with timezone
-2. Type of update(insert,update,delete)
+2. Type of update(insert,update,delete for CDC)
 3. File Name(if applicable)
+
+##### Examples
+=== "PySpark"
+
+    ``` python
+    from pyspark.sql.functions import current_timestamp,input_file_name
+    df.withColumns({"load_timestamp_utc": current_timestamp(), "input_filename": input_file_name()})
+    ```
 
 #### Optional metadata fields to add:
 1. Data Pipeline Name
 
 
 #### Mandatory Data Quality Checks:
-1. Duplicates check within batch
-2. Replace/Remove nulls within batch
-3. Schema Validated(Columns & Data Types)
+1. Duplicate Handling
+2. Null Handling
+3. Essential Columns Check
+4. Schema Drift Check(New Columns/Renamed Columns)
+4. Column Data Type Validation
 
-#### Code Snippet
-=== "PySpark"
 
-    ``` python
-    from pyspark.sql.functions import current_timestamp
-    df.withColumns({"load_timestamp_utc": current_timestamp()})
-    ```
 
 #### Bronze Layer Maintenance
 1. Move processed files to archive bucket or ensure life cylce policy(move to different tier) is implemented
@@ -33,11 +37,15 @@ The Bronze layer is where we land all the data from external source systems. The
 3. Always aim to get data in parquet format for efficient processing
 
 
-#### Checklist for Bronze Layer
+#### Checklist for Bronze Layer Workloads
 ```
-1. Implemented the mandatory metadata fields(Yes/No/NA):
-2. Implemented the optional metadata fields(Yes/No/NA):
-3. Duplicates removed (Yes/No/NA):
-4. Nulls removed/replaced (Yes/No/NA):
-5. Schema validated (Yes/No/NA):
+| CheckID | Description |  Implemented(Y/N/NA) |
+| --- | --- | --- |
+| B1 | Mandatory metadata fields | |
+| B2 | Optional metadata fields | |
+| B3 | Duplicates Handled | |
+| B4 | Nulls Handled | |
+| B5 | Essential Columns Check | |
+| B6 | Schema Drift Check | |
+| B7 | Column Data Type Validation | |
 ```

@@ -49,8 +49,8 @@ plugins:
   - open-in-new-tab
 copyright: Copyright &copy; 2025 DocuMint
 nav:
-  - Overview:
-      - Vision: 01_Overview/vision.md
+  - Home: index.md
+  - Project Layout: 01_Overview/project_layout.md
   - Tools & Frameworks: 02_Tools_Frameworks/Python.md
   - Best Practices: 04_Best_Practices/Cloud_Service_Providers.md
   - Data Flow:

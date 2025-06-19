@@ -1,17 +1,19 @@
-# Welcome to MkDocs
+# Welcome to Documint
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
+## Vision
+Our vision is to build a scalable, reliable, and modular data engineering platform that accelerates decision-making across the organization.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+We aim to:
 
-## Project layout
+- Empower data teams to deliver faster with confidence.
+- Standardize data pipelines using best practices and frameworks.
+- Ensure high data quality, observability, and governance.
+- Facilitate seamless integration across diverse platforms and business domains.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+This documentation serves as a single source of truth for how we design, implement, test, and operate data systems.
+
+## Run Locally
+
+* `mkdocs serve` - Start the live-reloading docs server locally.
+...
