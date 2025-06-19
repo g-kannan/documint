@@ -47,6 +47,7 @@ theme:
 plugins:
   - tags
   - open-in-new-tab
+  - search
 copyright: Copyright &copy; 2025 DocuMint
 nav:
   - Home: index.md
@@ -54,6 +55,6 @@ nav:
   - Tools & Frameworks: 02_Tools_Frameworks/Python.md
   - Best Practices: 04_Best_Practices/Cloud_Service_Providers.md
   - Data Flow:
-      - Bronze: 03_DataFlow/02_Bronze/Bronze.md
-      - Silver: 03_DataFlow/03_Silver/Silver.md
-      - Gold: 03_DataFlow/04_Gold/Gold.md
+      - Bronze: 03_DataLayers/02_Bronze/Bronze.md
+      - Silver: 03_DataLayers/03_Silver/Silver.md
+      - Gold: 03_DataLayers/04_Gold/Gold.md

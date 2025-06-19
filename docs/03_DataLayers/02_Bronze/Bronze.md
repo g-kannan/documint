@@ -23,13 +23,25 @@ The Bronze layer is where we land all the data from external source systems. The
 
 
 #### Mandatory Data Quality Checks:
-1. Duplicate Handling
-2. Null Handling
+1. Handling Duplicates
+2. Handling Nulls
 3. Essential Columns Check
 4. Schema Drift Check(New Columns/Renamed Columns)
-4. Column Data Type Validation
+5. Column Data Type Validation
+6. Empty Dataframe Check
 
+##### Examples
+=== "SchemaDrift(>Spark3.5)"
 
+    ``` python
+    from pyspark.testing import assertSchemaEqual
+    assertSchemaEqual(source_df.schema, target_df.schema)
+    ```
+=== "EmptyDataframe"
+
+    ``` python
+    source_df.isEmpty()
+    ```
 
 #### Bronze Layer Maintenance
 1. Move processed files to archive bucket or ensure life cylce policy(move to different tier) is implemented
@@ -48,4 +60,5 @@ The Bronze layer is where we land all the data from external source systems. The
 | B5 | Essential Columns Check | |
 | B6 | Schema Drift Check | |
 | B7 | Column Data Type Validation | |
+| B8 | Empty Dataframe Check | |
 ```

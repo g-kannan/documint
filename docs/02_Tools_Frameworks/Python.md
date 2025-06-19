@@ -10,6 +10,7 @@
 | [daft](https://github.com/Eventual-Inc/Daft) | Analytical Processing | Unified Engine for Data Analytics, Engineering & ML/AI | `pip install daft` |
 | [polars](https://docs.pola.rs/) | Analytical Processing | DataFrame-Agnostic Query Language | `pip install polars` |
 | [deltalake](https://github.com/delta-io/delta-rs) | Open Table Format | Delta Lake | `pip install deltalake` |
+| [dlt](https://github.com/dlt-hub/dlt) | Data load tool | makes data loading easy | `pip install dlt` |
 
 ## Tools
 | Name | Purpose | Description |
