@@ -58,3 +58,5 @@ nav:
       - Bronze: 03_DataLayers/02_Bronze/Bronze.md
       - Silver: 03_DataLayers/03_Silver/Silver.md
       - Gold: 03_DataLayers/04_Gold/Gold.md
+  - Data Platforms:
+      - Databricks: 05_Data_Platforms/Databricks.md

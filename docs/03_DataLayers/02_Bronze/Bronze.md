@@ -26,7 +26,7 @@ The Bronze layer is where we land all the data from external source systems. The
 1. Handling Duplicates
 2. Handling Nulls
 3. Essential Columns Check
-4. Schema Drift Check(New Columns/Renamed Columns)
+4. Schema Drift Check(New/Missing Columns)
 5. Column Data Type Validation
 6. Empty Dataframe Check
 
@@ -37,8 +37,33 @@ The Bronze layer is where we land all the data from external source systems. The
     from pyspark.testing import assertSchemaEqual
     assertSchemaEqual(source_df.schema, target_df.schema)
     ```
-=== "EmptyDataframe"
 
+=== "SchemaDrift(<Spark3.5)"
+
+    ``` python
+    from loguru import logger
+
+    def schema_drift_check(src_df, tgt_df):
+        source_column_list = set(src_df.columns)
+        target_column_list = set(tgt_df.columns)
+        only_in_source = list(source_column_list - target_column_list)
+        only_in_target = list(target_column_list - source_column_list) 
+        if len(only_in_source) > 0:
+            error_msg = f"Schema drift detected: Additional columns found in Source: {only_in_source}"
+            logger.exception(error_msg)
+            raise Exception(error_msg)
+        if len(only_in_target) > 0:
+            error_msg = f"Schema drift detected: Columns missing in Source: {only_in_target}"
+            logger.exception(error_msg)
+            raise Exception(error_msg)
+        else:
+            logger.info("Schemas matched for given dataframes")
+
+
+    schema_drift_check(source_df, target_df)
+    ```
+
+=== "EmptyDataframe"
     ``` python
     source_df.isEmpty()
     ```
@@ -61,4 +86,5 @@ The Bronze layer is where we land all the data from external source systems. The
 | B6 | Schema Drift Check | |
 | B7 | Column Data Type Validation | |
 | B8 | Empty Dataframe Check | |
+| B9 | Exception & Error logging | |
 ```
