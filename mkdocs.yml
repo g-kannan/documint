@@ -13,7 +13,11 @@ markdown_extensions:
       line_spans: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
   - pymdownx.tabbed:
       alternate_style: true 
 theme:
@@ -48,6 +52,7 @@ plugins:
   - tags
   - open-in-new-tab
   - search
+  - mermaid2
 copyright: Copyright &copy; 2025 DocuMint
 nav:
   - Home: index.md

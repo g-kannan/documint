@@ -4,7 +4,7 @@ Landing Zone, Ingestion Layer, Staging Layer
 #### Goal: 
 The Bronze layer is where we land all the data from external source systems. The table structures in this layer correspond to the source system table structures "as-is," along with any additional metadata columns that capture the load date/time, process ID, etc. The focus in this layer is quick Change Data Capture and the ability to provide an historical archive of source (cold storage), data lineage, auditability, reprocessing if needed without rereading the data from the source system.
 
-#### Mandatory metadata fields to add:
+#### Mandatory metadata fields/columns to add:
 
 1. Load Timestamp with timezone
 2. Type of update(insert,update,delete for CDC)
@@ -73,10 +73,19 @@ The Bronze layer is where we land all the data from external source systems. The
 2. Ensure partitioning in place in the bronze layer
 3. Always aim to get data in parquet format for efficient processing
 
+#### Mandatory Code Headers(Metadata, Checklist & Change Log) for Bronze Layer
 
-#### Checklist for Bronze Layer Workloads
-```
-| CheckID | Description |  Implemented(Y/N/NA) |
+``` markdown
+# Metadata
+----
+| ID | Property | Value |
+| --- | --- | --- |
+| M1 | Has PII/Regulatory/Sensitive Data | |
+| M2 | Timezone for Timestamp Columns | |
+
+# Checklist
+----
+| ID | Description |  Implemented(Y/N/NA) |
 | --- | --- | --- |
 | B1 | Mandatory metadata fields | |
 | B2 | Optional metadata fields | |
@@ -87,4 +96,10 @@ The Bronze layer is where we land all the data from external source systems. The
 | B7 | Column Data Type Validation | |
 | B8 | Empty Dataframe Check | |
 | B9 | Exception & Error logging | |
+
+# Change Log
+----
+| Date | Change | Author |
+| --- | --- | --- |
+|  |  |  |
 ```

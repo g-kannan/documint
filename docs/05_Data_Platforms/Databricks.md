@@ -4,6 +4,21 @@
 
 [Databricks Performance Guide](https://www.databricks.com/discover/pages/optimize-data-workloads-guide)
 
+## Observability
+
+### Freshness
+1. Setup [SQL Alerts](https://learn.microsoft.com/en-in/azure/databricks/sql/user/alerts/) with notifications
+2. Setup [Dashboards](https://learn.microsoft.com/en-us/azure/databricks/dashboards/) for specific requirements
+
+## Daily Tasks
+
+### Performing Data Tests/Fixes
+```mermaid
+graph LR
+    ShallowClone --> TestChanges
+    TestChanges --> VerifyImpactedRows
+    VerifyImpactedRows --> Implement
+```
 
 ### Unzipping a Zip file within Databricks
 ``` py
@@ -27,3 +42,4 @@ with ZipFile(BytesIO(zip_content), 'r') as zipping:
 
 print("Unzipped and saved")
 ```
+
