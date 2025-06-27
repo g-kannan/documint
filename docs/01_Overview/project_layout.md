@@ -30,3 +30,8 @@
     06_Benchmarks/
     07_Roadmap/
     Contributing.md
+
+## Running Locally
+
+* `mkdocs serve` - Start the live-reloading docs server locally.
+...
