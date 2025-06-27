@@ -75,6 +75,7 @@ nav:
   - Best Practices: 
       - Cloud Service Providers: 04_Best_Practices/Cloud_Service_Providers.md
       - Python_Spark: 04_Best_Practices/Python_Spark.md
+      - Workload Summary: 04_Best_Practices/WorkloadSummary.md
   - Data Flow:
       - Bronze: 03_DataLayers/02_Bronze/Bronze.md
       - Silver: 03_DataLayers/03_Silver/Silver.md
