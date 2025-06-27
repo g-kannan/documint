@@ -1,5 +1,3 @@
-# Cloud Service Providers
-
 ## Well Architected Framework
 | Cloud Service Provider | Link |
 | --- | --- |

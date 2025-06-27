@@ -10,13 +10,13 @@ The Bronze layer is where we land all the data from external source systems. The
 2. Type of update(insert,update,delete for CDC)
 3. File Name(if applicable)
 
-##### Examples
-=== "PySpark"
+!!! example
+    === "PySpark"
 
-    ``` python
-    from pyspark.sql.functions import current_timestamp,input_file_name
-    df.withColumns({"load_timestamp_utc": current_timestamp(), "input_filename": input_file_name()})
-    ```
+        ``` python
+        from pyspark.sql.functions import current_timestamp,input_file_name
+        df.withColumns({"load_timestamp_utc": current_timestamp(), "input_filename": input_file_name()})
+        ```
 
 #### Optional metadata fields to add:
 1. Data Pipeline Name
@@ -30,50 +30,50 @@ The Bronze layer is where we land all the data from external source systems. The
 5. Column Data Type Validation
 6. Empty Dataframe Check
 
-##### Examples
-=== "SchemaDrift(>Spark3.5)"
+!!! example
+    === "SchemaDrift(>Spark3.5)"
 
-    ``` python
-    from pyspark.testing import assertSchemaEqual
-    assertSchemaEqual(source_df.schema, target_df.schema)
-    ```
+        ``` python
+        from pyspark.testing import assertSchemaEqual
+        assertSchemaEqual(source_df.schema, target_df.schema)
+        ```
 
-=== "SchemaDrift(<Spark3.5)"
+    === "SchemaDrift(<Spark3.5)"
 
-    ``` python
-    from loguru import logger
+        ``` python
+        from loguru import logger
 
-    def schema_drift_check(src_df, tgt_df):
-        source_column_list = set(src_df.columns)
-        target_column_list = set(tgt_df.columns)
-        only_in_source = list(source_column_list - target_column_list)
-        only_in_target = list(target_column_list - source_column_list) 
-        if len(only_in_source) > 0:
-            error_msg = f"Schema drift detected: Additional columns found in Source: {only_in_source}"
-            logger.exception(error_msg)
-            raise Exception(error_msg)
-        if len(only_in_target) > 0:
-            error_msg = f"Schema drift detected: Columns missing in Source: {only_in_target}"
-            logger.exception(error_msg)
-            raise Exception(error_msg)
-        else:
-            logger.info("Schemas matched for given dataframes")
+        def schema_drift_check(src_df, tgt_df):
+            source_column_list = set(src_df.columns)
+            target_column_list = set(tgt_df.columns)
+            only_in_source = list(source_column_list - target_column_list)
+            only_in_target = list(target_column_list - source_column_list) 
+            if len(only_in_source) > 0:
+                error_msg = f"Schema drift detected: Additional columns found in Source: {only_in_source}"
+                logger.exception(error_msg)
+                raise Exception(error_msg)
+            if len(only_in_target) > 0:
+                error_msg = f"Schema drift detected: Columns missing in Source: {only_in_target}"
+                logger.exception(error_msg)
+                raise Exception(error_msg)
+            else:
+                logger.info("Schemas matched for given dataframes")
 
 
-    schema_drift_check(source_df, target_df)
-    ```
+        schema_drift_check(source_df, target_df)
+        ```
 
-=== "EmptyDataframe"
-    ``` python
-    source_df.isEmpty()
-    ```
+    === "EmptyDataframe"
+        ``` python
+        source_df.isEmpty()
+        ```
 
 #### Bronze Layer Maintenance
 1. Move processed files to archive bucket or ensure life cylce policy(move to different tier) is implemented
 2. Ensure partitioning in place in the bronze layer
 3. Always aim to get data in parquet format for efficient processing
 
-#### Mandatory Code Headers(Metadata, Checklist & Change Log) for Bronze Layer
+#### Mandatory Code Headers
 
 ``` markdown
 # Metadata

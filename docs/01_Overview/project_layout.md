@@ -1,4 +1,8 @@
-## Structure
+## Architecture
+* This website is built using [mkdocs](https://www.mkdocs.org/) and [mkdocs-material](https://squidfunk.github.io/mkdocs-material/).
+* Hosted via Cloudflare Pages
+
+## Folder Structure
 
     mkdocs.yml    # The configuration file.
     docs/
@@ -18,9 +22,11 @@
             Gold.md
     04_Best_Practices/
         Cloud_Service_Providers.md
+        Python_Spark.md
     05_Data_Platforms/
         BigQuery.md
         Databricks.md
         Snowflake.md
     06_Benchmarks/
     07_Roadmap/
+    Contributing.md

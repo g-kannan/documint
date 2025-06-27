@@ -4,6 +4,7 @@ repo_name: DocuMint
 markdown_extensions:
   - attr_list
   - tables
+  - admonition
   - pymdownx.highlight:
       anchor_linenums: true
       use_pygments: true
@@ -23,6 +24,19 @@ markdown_extensions:
 theme:
   icon:
     repo: fontawesome/brands/git
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
   name: material
   features:
     - search.highlight
@@ -58,10 +72,14 @@ nav:
   - Home: index.md
   - Project Layout: 01_Overview/project_layout.md
   - Tools & Frameworks: 02_Tools_Frameworks/Python.md
-  - Best Practices: 04_Best_Practices/Cloud_Service_Providers.md
+  - Best Practices: 
+      - Cloud Service Providers: 04_Best_Practices/Cloud_Service_Providers.md
+      - Python_Spark: 04_Best_Practices/Python_Spark.md
   - Data Flow:
       - Bronze: 03_DataLayers/02_Bronze/Bronze.md
       - Silver: 03_DataLayers/03_Silver/Silver.md
       - Gold: 03_DataLayers/04_Gold/Gold.md
   - Data Platforms:
       - Databricks: 05_Data_Platforms/Databricks.md
+      - BigQuery: 05_Data_Platforms/BigQuery.md
+      - Snowflake: 05_Data_Platforms/Snowflake.md

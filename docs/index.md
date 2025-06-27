@@ -6,8 +6,10 @@ Our vision is to build a scalable, reliable, and modular data engineering platfo
 
 We aim to:
 
+- Proactive & Cost aware development
+- Build what client needs NOT what they want
+- Practical ways to implement best practices
 - Empower data teams to deliver faster with confidence.
-- Standardize data pipelines using best practices and frameworks.
 - Ensure high data quality, observability, and governance.
 - Facilitate seamless integration across diverse platforms and business domains.
 
