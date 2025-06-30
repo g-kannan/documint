@@ -29,6 +29,8 @@ The Bronze layer is where we land all the data from external source systems. The
 4. Schema Drift Check(New/Missing Columns)
 5. Column Data Type Validation
 6. Empty Dataframe Check
+7. Row Count Check
+8. Data Freshness check
 
 !!! example
     === "SchemaDrift(>Spark3.5)"
@@ -71,7 +73,8 @@ The Bronze layer is where we land all the data from external source systems. The
 #### Bronze Layer Maintenance
 1. Move processed files to archive bucket or ensure life cylce policy(move to different tier) is implemented
 2. Ensure partitioning in place in the bronze layer
-3. Always aim to get data in parquet format for efficient processing
+3. Always aim to get data in parquet format for efficient processing.
+4. Implement quarantine layer logic for corrupted or failed records (e.g., malformed rows, schema mismatches)
 
 #### Mandatory Code Headers
 
@@ -95,7 +98,9 @@ The Bronze layer is where we land all the data from external source systems. The
 | B6 | Schema Drift Check | |
 | B7 | Column Data Type Validation | |
 | B8 | Empty Dataframe Check | |
-| B9 | Exception & Error logging | |
+| B9 | Row Count Check | |
+| B10 | Data Freshness Check | |
+| B11 | Exception & Error logging | |
 
 # Change Log
 ----
